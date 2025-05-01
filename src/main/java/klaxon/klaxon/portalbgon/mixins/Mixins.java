@@ -18,6 +18,8 @@
 
 package klaxon.klaxon.portalbgon.mixins;
 
+import static com.gtnewhorizon.gtnhlib.mixin.TargetedMod.VANILLA;
+
 import java.util.List;
 import java.util.function.Supplier;
 
@@ -28,7 +30,12 @@ import com.gtnewhorizon.gtnhlib.mixin.Phase;
 import com.gtnewhorizon.gtnhlib.mixin.Side;
 
 public enum Mixins implements IMixins {
-    ;
+
+    NUKE_PORTAL_BLOCK(new MixinBuilder("Erase most of the methods inside BlockPortal").setApplyIf(() -> true)
+        .addMixinClasses("minecraft.MixinBlockPortal")
+        .addTargetedMod(VANILLA)
+        .setPhase(Phase.EARLY)
+        .setSide(Side.BOTH));
 
     private final List<String> mixinClasses;
     private final Supplier<Boolean> applyIf;
