@@ -30,6 +30,8 @@ public class PortalBGon {
     public static final String MODID = "portalbgon";
     public static final Logger LOG = LogManager.getLogger(MODID);
 
-    @SidedProxy(clientSide = "klaxon.klaxon.portalbgon.ClientProxy", serverSide = "klaxon.klaxon.portalbgon.CommonProxy")
+    @SidedProxy(
+        clientSide = "klaxon.klaxon.portalbgon.ClientProxy",
+        serverSide = "klaxon.klaxon.portalbgon.CommonProxy")
     public static CommonProxy proxy;
 }

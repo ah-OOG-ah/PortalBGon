@@ -1,7 +1,7 @@
 # License template
 The multiline commit below is the header used for .java and .glsl files. No actual automatic variable replacement is performed,
 the $NAMEs represent things you'll have to manually edit. This template follows the FSF's guidelines
-[here](https://www.gnu.org/licenses/gpl-howto.html)
+[here](https://www.gnu.org/licenses/gpl-howto.html).
 
 A breakdown of the header:
 - One "Copyright (C) ..." line should be added per-author.

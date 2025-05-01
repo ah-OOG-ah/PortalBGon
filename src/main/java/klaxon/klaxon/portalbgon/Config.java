@@ -18,9 +18,5 @@
 
 package klaxon.klaxon.portalbgon;
 
-import java.io.File;
-
-import net.minecraftforge.common.config.Configuration;
-
 public class Config {
 }

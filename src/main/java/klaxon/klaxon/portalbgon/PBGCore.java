@@ -18,15 +18,18 @@
 
 package klaxon.klaxon.portalbgon;
 
-import com.gtnewhorizon.gtnhlib.mixin.IMixins;
-import com.gtnewhorizon.gtnhmixins.IEarlyMixinLoader;
-import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import com.gtnewhorizon.gtnhlib.mixin.IMixins;
+import com.gtnewhorizon.gtnhmixins.IEarlyMixinLoader;
+
+import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
 import klaxon.klaxon.portalbgon.mixins.Mixins;
 
 public class PBGCore implements IFMLLoadingPlugin, IEarlyMixinLoader {
+
     @Override
     public String getMixinConfig() {
         return "mixins.portalbgon.early.json";

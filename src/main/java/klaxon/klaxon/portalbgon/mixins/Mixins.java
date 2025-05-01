@@ -18,13 +18,14 @@
 
 package klaxon.klaxon.portalbgon.mixins;
 
+import java.util.List;
+import java.util.function.Supplier;
+
 import com.gtnewhorizon.gtnhlib.mixin.IMixins;
 import com.gtnewhorizon.gtnhlib.mixin.ITargetedMod;
 import com.gtnewhorizon.gtnhlib.mixin.MixinBuilder;
 import com.gtnewhorizon.gtnhlib.mixin.Phase;
 import com.gtnewhorizon.gtnhlib.mixin.Side;
-import java.util.List;
-import java.util.function.Supplier;
 
 public enum Mixins implements IMixins {
     ;
