@@ -20,12 +20,14 @@ package klaxon.klaxon.portalbgon;
 
 import com.gtnewhorizon.gtnhlib.config.ConfigException;
 import com.gtnewhorizon.gtnhlib.config.ConfigurationManager;
+
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
 
 public class CommonProxy {
+
     public void preInit(FMLPreInitializationEvent event) {
         try {
             ConfigurationManager.registerConfig(PGBConfig.class);
@@ -34,7 +36,9 @@ public class CommonProxy {
         }
 
         if (PGBConfig.redirect) {
-            FMLCommonHandler.instance().bus().register(this);
+            FMLCommonHandler.instance()
+                .bus()
+                .register(this);
         }
     }
 

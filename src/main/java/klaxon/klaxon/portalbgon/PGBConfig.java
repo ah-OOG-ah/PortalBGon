@@ -20,7 +20,7 @@ package klaxon.klaxon.portalbgon;
 
 import com.gtnewhorizon.gtnhlib.config.Config;
 
-@Config(modid="portalbgon")
+@Config(modid = "portalbgon")
 @Config.RequiresMcRestart
 public class PGBConfig {
 
