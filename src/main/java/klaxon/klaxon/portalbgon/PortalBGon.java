@@ -34,4 +34,9 @@ public class PortalBGon {
         clientSide = "klaxon.klaxon.portalbgon.ClientProxy",
         serverSide = "klaxon.klaxon.portalbgon.CommonProxy")
     public static CommonProxy proxy;
+
+    @Mod.EventHandler
+    public void preInit(cpw.mods.fml.common.event.FMLPreInitializationEvent event) {
+        proxy.preInit(event);
+    }
 }

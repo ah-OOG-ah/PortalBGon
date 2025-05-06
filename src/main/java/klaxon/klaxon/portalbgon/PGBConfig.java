@@ -18,5 +18,13 @@
 
 package klaxon.klaxon.portalbgon;
 
-public class Config {
+import com.gtnewhorizon.gtnhlib.config.Config;
+
+@Config(modid="portalbgon")
+@Config.RequiresMcRestart
+public class PGBConfig {
+
+    @Config.Comment("Catch PlayerChangedDimensionEvent to redirect any nether teleport to the overworld")
+    @Config.DefaultBoolean(false)
+    public static boolean redirect;
 }

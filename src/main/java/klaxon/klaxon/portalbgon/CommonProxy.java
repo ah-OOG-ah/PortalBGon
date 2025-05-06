@@ -18,5 +18,30 @@
 
 package klaxon.klaxon.portalbgon;
 
+import com.gtnewhorizon.gtnhlib.config.ConfigException;
+import com.gtnewhorizon.gtnhlib.config.ConfigurationManager;
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent;
+
 public class CommonProxy {
+    public void preInit(FMLPreInitializationEvent event) {
+        try {
+            ConfigurationManager.registerConfig(PGBConfig.class);
+        } catch (ConfigException e) {
+            throw new RuntimeException(e);
+        }
+
+        if (PGBConfig.redirect) {
+            FMLCommonHandler.instance().bus().register(this);
+        }
+    }
+
+    @SubscribeEvent
+    public void onPlayerDimChange(PlayerEvent.PlayerChangedDimensionEvent event) {
+        if (event.toDim == -1) {
+            event.player.travelToDimension(event.fromDim);
+        }
+    }
 }
