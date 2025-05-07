@@ -29,7 +29,7 @@ import cpw.mods.fml.common.gameevent.PlayerEvent;
 
 public class CommonProxy {
 
-    public void preInit(FMLPreInitializationEvent event) {
+    public void preInit(FMLPreInitializationEvent ignored) {
         try {
             ConfigurationManager.registerConfig(PGBConfig.class);
         } catch (ConfigException e) {

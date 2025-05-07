@@ -19,6 +19,7 @@
 
 package klaxon.klaxon.portalbgon;
 
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -37,7 +38,7 @@ public class PortalBGon {
     public static CommonProxy proxy;
 
     @Mod.EventHandler
-    public void preInit(cpw.mods.fml.common.event.FMLPreInitializationEvent event) {
+    public void preInit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
     }
 }
