@@ -1,6 +1,7 @@
 /**
  * This file is part of PortalBGon - a mod to constrain your "doors".
  * Copyright (C) 2025 ah-OOG-ah
+ * Copyright (C) 2025 Midnight145
  *
  * PortalBGon is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -18,5 +19,34 @@
 
 package klaxon.klaxon.portalbgon;
 
+import com.gtnewhorizon.gtnhlib.config.ConfigException;
+import com.gtnewhorizon.gtnhlib.config.ConfigurationManager;
+
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent;
+
 public class CommonProxy {
+
+    public void preInit(FMLPreInitializationEvent ignored) {
+        try {
+            ConfigurationManager.registerConfig(PGBConfig.class);
+        } catch (ConfigException e) {
+            throw new RuntimeException(e);
+        }
+
+        if (PGBConfig.redirectXDimTp) {
+            FMLCommonHandler.instance()
+                .bus()
+                .register(this);
+        }
+    }
+
+    @SubscribeEvent
+    public void onPlayerDimChange(PlayerEvent.PlayerChangedDimensionEvent event) {
+        if (event.toDim == -1) {
+            event.player.travelToDimension(event.fromDim);
+        }
+    }
 }

@@ -1,6 +1,7 @@
 /**
  * This file is part of PortalBGon - a mod to constrain your "doors".
  * Copyright (C) 2025 ah-OOG-ah
+ * Copyright (C) 2025 Midnight145
  *
  * PortalBGon is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -18,5 +19,13 @@
 
 package klaxon.klaxon.portalbgon;
 
-public class Config {
+import com.gtnewhorizon.gtnhlib.config.Config;
+
+@Config(modid = "portalbgon")
+@Config.RequiresMcRestart
+public class PGBConfig {
+
+    @Config.Comment("Catch PlayerChangedDimensionEvent to redirect any nether teleport back from whence it came!")
+    @Config.DefaultBoolean(false)
+    public static boolean redirectXDimTp;
 }

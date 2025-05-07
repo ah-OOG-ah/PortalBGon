@@ -1,6 +1,7 @@
 /**
  * This file is part of PortalBGon - a mod to constrain your "doors".
  * Copyright (C) 2025 ah-OOG-ah
+ * Copyright (C) 2025 Midnight145
  *
  * PortalBGon is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -23,6 +24,7 @@ import org.apache.logging.log4j.Logger;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = PortalBGon.MODID, version = Tags.VERSION, name = "PortalBGon", acceptedMinecraftVersions = "[1.7.10]")
 public class PortalBGon {
@@ -34,4 +36,9 @@ public class PortalBGon {
         clientSide = "klaxon.klaxon.portalbgon.ClientProxy",
         serverSide = "klaxon.klaxon.portalbgon.CommonProxy")
     public static CommonProxy proxy;
+
+    @Mod.EventHandler
+    public void preInit(FMLPreInitializationEvent event) {
+        proxy.preInit(event);
+    }
 }
