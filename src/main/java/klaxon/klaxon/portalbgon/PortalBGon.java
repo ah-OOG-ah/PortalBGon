@@ -19,12 +19,12 @@
 
 package klaxon.klaxon.portalbgon;
 
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = PortalBGon.MODID, version = Tags.VERSION, name = "PortalBGon", acceptedMinecraftVersions = "[1.7.10]")
 public class PortalBGon {
