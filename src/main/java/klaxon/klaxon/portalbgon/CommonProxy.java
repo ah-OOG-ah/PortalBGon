@@ -35,7 +35,7 @@ public class CommonProxy {
             throw new RuntimeException(e);
         }
 
-        if (PGBConfig.redirect) {
+        if (PGBConfig.redirectXDimTp) {
             FMLCommonHandler.instance()
                 .bus()
                 .register(this);

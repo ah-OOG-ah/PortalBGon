@@ -24,7 +24,7 @@ import com.gtnewhorizon.gtnhlib.config.Config;
 @Config.RequiresMcRestart
 public class PGBConfig {
 
-    @Config.Comment("Catch PlayerChangedDimensionEvent to redirect any nether teleport to the overworld")
+    @Config.Comment("Catch PlayerChangedDimensionEvent to redirect any nether teleport back from whence it came!")
     @Config.DefaultBoolean(false)
-    public static boolean redirect;
+    public static boolean redirectXDimTp;
 }
